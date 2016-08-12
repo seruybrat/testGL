@@ -1,0 +1,89 @@
+body, html, ul
+	margin: 0
+	padding: 0
+ul
+	list-style: none
+*, *::before, *::after
+	box-sizing: border-box
+
+$main-color: #d9d9d9
+
+body
+	font: 16px Arial, Helvetica, sans-serif
+	line-height: 24px
+.task
+	&__list
+		width: 200px
+		margin: 50px auto
+		color: #fafafa
+		text-align: center
+		border-radius: 5px
+		background-color: #168B54
+	&__item
+		font-size: 2em
+		line-height: 1.5
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		border-bottom: 1px solid #fafafa
+		cursor: pointer
+.context-menu
+	display: none
+	position: absolute
+	width: 150px
+	border: 1px solid darken($main-color, 10%)
+	box-sizing: border-box
+	&__list
+	&__item
+		padding: 5px 15px 5px 5px
+		color: #167178
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		background-color: $main-color
+		cursor: pointer
+		transition: all .3s ease
+		&:hover
+			color: #fff
+			background-color: darken($main-color, 30%)
+		&:active
+			background-color: darken($main-color, 40%)
+		&_sub
+			@extend .context-menu__item
+			position: relative
+			&::after
+				content: "►"
+				font-size: 11px
+				position: absolute
+				top: 7px
+				right: 5px
+	&__link
+		display: block
+		text-decoration: none
+	&__arrow
+		display: none
+		width: 100%
+		padding: 2px
+		font-size: 11px
+		text-align: center
+		color: #167178
+		box-sizing: border-box
+		background-color: darken($main-color, 25%)
+		cursor: pointer
+		transition: all .3s ease
+		&:hover
+			color: #fff
+			background-color: darken($main-color, 15%)
+		&:active
+			background-color: darken($main-color, 25%)
+		&_up
+			@extend .context-menu__arrow
+		&_down
+			@extend .context-menu__arrow
+.show
+	display: block
+
+
+
+
+

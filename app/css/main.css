@@ -1,0 +1,88 @@
+@charset "UTF-8";
+body, html, ul {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font: 16px Arial, Helvetica, sans-serif;
+  line-height: 24px; }
+
+.task__list {
+  width: 200px;
+  margin: 50px auto;
+  color: #fafafa;
+  text-align: center;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  background-color: #168B54; }
+
+.task__item {
+  font-size: 2em;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #fafafa;
+  cursor: pointer; }
+
+.context-menu {
+  display: none;
+  position: absolute;
+  width: 150px;
+  border: 1px solid silver;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  .context-menu__item, .context-menu__item_sub {
+    padding: 5px 15px 5px 5px;
+    color: #167178;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease; }
+    .context-menu__item:hover, .context-menu__item_sub:hover {
+      color: #fff;
+      background-color: #8d8d8d; }
+    .context-menu__item:active, .context-menu__item_sub:active {
+      background-color: #737373; }
+    .context-menu__item_sub {
+      position: relative; }
+      .context-menu__item_sub::after {
+        content: "►";
+        font-size: 11px;
+        position: absolute;
+        top: 7px;
+        right: 5px; }
+  .context-menu__link {
+    display: block;
+    text-decoration: none; }
+  .context-menu__arrow, .context-menu__arrow_up, .context-menu__arrow_down {
+    display: none;
+    width: 100%;
+    padding: 2px;
+    font-size: 11px;
+    text-align: center;
+    color: #167178;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #999999;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease; }
+    .context-menu__arrow:hover, .context-menu__arrow_up:hover, .context-menu__arrow_down:hover {
+      color: #fff;
+      background-color: #b3b3b3; }
+    .context-menu__arrow:active, .context-menu__arrow_up:active, .context-menu__arrow_down:active {
+      background-color: #999999; }
+
+.show {
+  display: block; }
